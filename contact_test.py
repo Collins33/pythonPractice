@@ -43,6 +43,13 @@ class TestContact(unittest.TestCase):
         test_contact.saveContact()#save second object into the array
         test_contact.deleteContact()
         self.assertEqual(len(Contact.contact_list),1)
+    #find contact by number
+    def test_findContact_contact(self):
+        self.new_contact.saveContact()
+        test_contact = Contact("Test","user","0711223344","test@user.com") # new contact
+        test_contact.saveContact()
+        found_contact=Contact.findContact("0711223344")
+        self.assertEqual(found_contact.number,test_contact.number)
 
 if __name__ == '__main__':
     unittest.main()
