@@ -19,7 +19,12 @@ class Contact:
         for contact in cls.contact_list:
             if contact.number == number:
                 return contact
-
+    @classmethod
+    def contactExists(cls,number):
+        for contact in cls.contact_list:
+            if contact.number == number:
+                return True
+        return False
 
     def __init__(self,first_name,last_name,number,email):
 
