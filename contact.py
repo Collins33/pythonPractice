@@ -10,6 +10,9 @@ class Contact:
     def saveContact(self):
         #appends the object to the list
         Contact.contact_list.append(self)
+    #method to delete contacts
+    def deleteContact(self):
+        Contact.contact_list.remove(self)    
 
     def __init__(self,first_name,last_name,number,email):
 
