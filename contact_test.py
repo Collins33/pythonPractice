@@ -11,7 +11,11 @@ class TestContact(unittest.TestCase):
         Set up method to run before each test cases.
         '''
         self.new_contact = Contact("James","Muriuki","0712345678","james@ms.com") # create contact object
-
+    def tearDown(self):
+        '''
+        tearDown method that does clean up after each test case has run.
+        '''
+        Contact.contact_list=[]#clear the list after every test
 
     def test_init(self):
         '''
@@ -25,8 +29,12 @@ class TestContact(unittest.TestCase):
 
     def test_save_contact(self):
         self.new_contact.saveContact()
-        self.assertEqual(len(Contact.contact_list),1)    
-
-
+        self.assertEqual(len(Contact.contact_list),1)
+        #save multiple contacts
+    def test_saveMultiple_contact(self):
+        self.new_contact.saveContact()#save the setup object
+        test_contact=Contact("Test","user","0712345678","test@user.com")#second object
+        test_contact.saveContact()#save second object into the array
+        self.assertEqual(len(Contact.contact_list),2)
 if __name__ == '__main__':
     unittest.main()
