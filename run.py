@@ -8,7 +8,7 @@ def createContact(fname,lname,phone,email):
     return new_contact
 #save contacts
 def saveContact(contact):
-    contact.save()
+    contact.saveContact()
 #delete contact
 def deleteContact(contact):
     contact.delete()
@@ -24,7 +24,7 @@ def display_contacts():
     '''
     Function that returns all the saved contacts
     '''
-    return Contact.display_contacts()
+    return Contact.displayContact()
 def copy_number(number):
     Contact_found=Contact.findContact(number)
     pyperclip.copy(Contact_found.number)
@@ -54,6 +54,16 @@ def main():
             print("Email address ...")
             e_address = input()
             saveContact(createContact(f_name,l_name,p_number,e_address))#createcontact then save it
+        elif short_code == 'dc':
+            if display_contacts():
+                print("Here is a list of all the contacts:")
+                print('\n')
+                for contact in display_contacts:
+                    print(f"{contact.first_name}")
+            else:
+                print('\n')
+                print("you dont seem to have any contacts")
+                print('\n')
 
 if __name__ == '__main__':
 
