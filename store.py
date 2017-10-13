@@ -15,3 +15,13 @@ for key in prices:
   amount=prices[key]*stock[key]
   total +=amount
   print total
+
+
+#grocery list
+groceries=['banana','orange','apple']
+
+def compute_bill(food):
+  total = 0
+  for item in food:
+    total = total + prices[item]
+  return total
