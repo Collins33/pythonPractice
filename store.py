@@ -8,3 +8,10 @@ for key in prices:
   print "price: %s" % prices[key]
 
   print "stock: %s" % stock[key]
+
+#get how much our store is worth by multiplying total stock and total price
+total=0
+for key in prices:
+  amount=prices[key]*stock[key]
+  total +=amount
+  print total
