@@ -31,3 +31,12 @@ def average(numbers):
   total=float(total)
   total=total/len(numbers)
   return total
+
+#this method finds the average of the work and multiples the average by the weight
+#it takes a dictionary as an argument
+def get_average(student):
+  homework=average(student["homework"])*0.1
+  quizzes=average(student["quizzes"])*0.3
+  tests=average(student["tests"])*0.6
+
+  return homework+quizzes+tests
