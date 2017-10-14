@@ -26,7 +26,9 @@ def compute_bill(food):
   total = 0
   for item in food:
     if stock[item] >0:
+        #add stock if its stock is >0
       total = total + prices[item]
+      #reduce stock by one after dding it
       stock[item]=stock[item] - 1
   return total
 print (compute_bill(shopping_list))
