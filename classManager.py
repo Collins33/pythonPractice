@@ -53,4 +53,14 @@ def get_letter_grade(score):
   else:
     return 'F'
 
-print (get_letter_grade(get_average(lloyd)))    
+print (get_letter_grade(get_average(lloyd)))
+#get the average of each student
+#then find average of that average
+def get_class_average(class_list):
+  results=[]
+  for student in class_list:
+    finalresult=get_average(student)
+    results.append(finalresult)
+  return average(results)
+
+print (get_class_average(students))  
