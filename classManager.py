@@ -20,6 +20,14 @@ tyler = {
 students=[lloyd,alice,tyler]
 #loop through the list to access the dictionaries
 #loop through the dictionaries to print the values using the keys
+print ("the class manager")
 for student in students:
   for key in student:
+    print (key)
     print (student[key])
+#this method takes a list of numbers and finds the average
+def average(numbers):
+  total=sum(numbers)
+  total=float(total)
+  total=total/len(numbers)
+  return total
