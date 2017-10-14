@@ -18,3 +18,8 @@ tyler = {
 }
 #add the three dictionaries to a list
 students=[lloyd,alice,tyler]
+#loop through the list to access the dictionaries
+#loop through the dictionaries to print the values using the keys
+for student in students:
+  for key in student:
+    print (student[key])
